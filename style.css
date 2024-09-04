@@ -17,7 +17,7 @@ body {
     color: #F6F6F6; /* Define a cor do texto */
 }
 
-/* Define a posição e o tamanho da imagem */
+/* Define a posição e o tamanho da imagem. */
 .minha-imagem {
     position: absolute; /* Posiciona a imagem de forma absoluta em relação ao elemento pai */
     top: 30px; /* Define a distância da imagem ao topo da página */
