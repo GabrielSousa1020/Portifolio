@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:ital,wght@0,600;1,600&display=swap');
+
+/* Reseta as margens e preenchimentos para todos os elementos */
+* {
+    margin: 0;  
+    padding: 0;
+}
+
+/* Define estilos gerais para o corpo da página */
+body {
+    height: 100vh; /* Define a altura do body como 100% da altura da janela */
+    box-sizing: border-box; /* Inclui bordas e padding no cálculo da largura e altura */
+    background-image: url(fundoportifolio.png); /* Define a imagem de fundo */
+    background-size: cover; /* A imagem de fundo cobre toda a área disponível */
+    background-position: center; /* Centraliza a imagem de fundo */
+    overflow: hidden; /* Remove barras de rolagem */
+    color: #F6F6F6; /* Define a cor do texto */
+}
+
+/* Define a posição e o tamanho da imagem */
+.minha-imagem {
+    position: absolute; /* Posiciona a imagem de forma absoluta em relação ao elemento pai */
+    top: 30px; /* Define a distância da imagem ao topo da página */
+    left: 90%; /* Define a posição da imagem à esquerda, com 90% de distância */
+    transform: translateX(-10%); /* Move a imagem 10% para a esquerda a partir de sua posição */
+    max-width: 100%; /* Define a largura máxima da imagem como 100% do contêiner */
+    height: auto; /* Ajusta automaticamente a altura da imagem para manter a proporção */
+}
+
+/* Define a cor do texto em destaque para títulos */
+.destaque-titulo {
+    color: #22D4FD; /* Define a cor do texto como um azul claro */
+}
+
+/* Define a cor do texto em destaque para parágrafos */
+.destaque-paragrafo {
+    color: #22D4FD; /* Define a cor do texto como um azul claro */
+}
+
+/* Define a apresentação da seção com margens e layout flexível */
+.apresentacao {
+    margin: 2%; /* Define a margem ao redor da seção */
+    display: flex; /* Aplica o layout flexível à seção */
+    flex-direction: column; /* Organiza os elementos em uma coluna */
+    align-items: flex-start; /* Alinha os itens ao início da linha principal */
+    justify-content: center; /* Centraliza os itens ao longo do eixo secundário */
+    height: calc(90vh - 60px); /* Calcula a altura como 90% da altura da janela menos 60px */
+}
+    
+/* Define a apresentação do conteúdo interno com layout flexível e espaçamento entre elementos */
+.apresentacao__conteudo {
+    width: 615px; /* Define a largura do conteúdo */
+    display: flex; /* Aplica o layout flexível ao conteúdo */
+    flex-direction: column; /* Organiza os elementos em uma coluna */
+    gap: 30px; /* Define um espaçamento de 30px entre os elementos filhos */
+}
+
+/* Define o estilo do título principal */
+.apresentacao__conteudo__titulo {
+    font-size: 30px; /* Define o tamanho da fonte para o título */
+    font-family: 'Krona One', sans-serif; /* Define a fonte do título */
+}
+
+/* Define o estilo do texto do título */
+.apresentacao__conteudo__titulo__texto {
+    font-size: 22px; /* Define o tamanho da fonte para o texto do título */
+    font-family: 'Montserrat', sans-serif; /* Define a fonte para o texto */
+    margin-top: 10px; /* Adiciona uma margem superior de 10px */
+}
+
+/* Define o layout dos links, distribuindo-os de forma uniforme */
+.apresentacao__links {
+    display: flex; /* Aplica o layout flexível aos links */
+    justify-content: space-between; /* Distribui os links com espaço uniforme entre eles */
+}
+
+/* Define o estilo dos links */
+.apresentacao__links__link {
+    background-color: #22D4FD; /* Define a cor de fundo dos links */
+    width: 280px; /* Define a largura dos links */
+    text-align: center; /* Centraliza o texto dentro dos links */
+    border-radius: 16px; /* Arredonda os cantos dos links */
+    font-size: 24px; /* Define o tamanho da fonte dos links */
+    font-weight: 600; /* Define o peso da fonte como semi-negrito */
+    padding: 10.5px 0; /* Adiciona preenchimento vertical dentro dos links */
+    text-decoration: none; /* Remove a sublinhado dos links */
+    color: #000000; /* Define a cor do texto dos links como preto */
+    font-family: 'Montserrat', sans-serif; /* Define a fonte dos links */
+    margin-top: 50px; /* Adiciona uma margem superior de 50px */
+}
+
+/* Define o estilo dos links quando o mouse passa sobre eles */
+.apresentacao__links__link:hover {
+    background-color: #ffffff; /* Altera a cor de fundo dos links para branco */
+    color: #000000; /* Altera a cor do texto dos links para preto */
+}
+
+/* Estilos para dispositivos móveis */
+@media (max-width: 768px) {
+    
+    body {
+        background-image: none; /* Remove a imagem de fundo em dispositivos móveis */
+        background-color: #000000; /* Define o fundo como preto */
+    }
+
+    .apresentacao {
+        margin: 4%; /* Aumenta a margem ao redor da seção */
+        height: auto; /* Define a altura automaticamente para o conteúdo */
+        justify-content: flex-start; /* Alinha o conteúdo ao topo da seção */
+    }
+
+    .apresentacao__conteudo {
+        width: 100%; /* Usa toda a largura disponível no contêiner */
+        gap: 20px; /* Reduz o espaçamento entre os elementos filhos para 20px */
+    }
+
+    .apresentacao__conteudo__titulo {
+        font-size: 24px; /* Reduz o tamanho da fonte para o título */
+    }
+
+    .apresentacao__conteudo__titulo__texto {
+        font-size: 18px; /* Reduz o tamanho da fonte para o texto do título */
+    }
+
+    .apresentacao__links {
+        flex-direction: column; /* Empilha os links verticalmente */
+        align-items: center; /* Centraliza os links horizontalmente */
+    }
+
+    .apresentacao__links__link {
+        width: 100%; /* Usa toda a largura disponível no contêiner */
+        margin-top: 20px; /* Reduz a margem superior para 20px */
+    }
+
+    .minha-imagem {
+        top: 500px; /* Ajusta a posição da imagem em relação ao topo */
+        left: 50%; /* Centraliza a imagem horizontalmente */
+        transform: translateX(-50%); /* Ajusta a posição da imagem para centralizá-la */
+        max-width: 80%; /* Reduz a largura máxima da imagem para 80% do contêiner */
+    }
+}
