@@ -74,8 +74,8 @@ body {
     align-items: center; /* Alinha o conteúdo verticalmente no centro */
     justify-content: center; /* Centraliza o conteúdo horizontalmente */
     border-radius: 50%; /* Define os cantos como completamente arredondados */
-    border-style: solid;
-    box-shadow: 0px 0px 15px 4px rgba(12, 116, 212, 0.79);
+    border-style: solid; /* Define o estilo da borda como sólido */
+    box-shadow: 0px 0px 15px 4px rgba(12, 116, 212, 0.79); /* Adiciona uma sombra ao redor do elemento */
     font-size: 21px; /* Define o tamanho da fonte dos links */
     font-weight: 600; /* Define o peso da fonte como semi-negrito */
     text-decoration: none; /* Remove o sublinhado dos links */
