@@ -43,7 +43,7 @@ body {
     width: 615px; /* Define a largura do conteúdo */
     display: flex; /* Aplica o layout flexível ao conteúdo */
     flex-direction: column; /* Organiza os elementos em uma coluna */
-    gap: 100px; /* Define um espaçamento de 30px entre os elementos filhos */
+    gap: 90px; /* Define um espaçamento de 30px entre os elementos filhos */
 }
 
 /* Define o estilo do título principal */
