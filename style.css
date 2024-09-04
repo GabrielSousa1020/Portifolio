@@ -17,15 +17,6 @@ body {
     color: #F6F6F6; /* Define a cor do texto */
 }
 
-/* Define a posição e o tamanho da imagem */
-.minha-imagem {
-    position: absolute; /* Posiciona a imagem de forma absoluta em relação ao elemento pai */
-    top: 30px; /* Define a distância da imagem ao topo da página */
-    left: 90%; /* Define a posição da imagem à esquerda, com 90% de distância */
-    transform: translateX(-10%); /* Move a imagem 10% para a esquerda a partir de sua posição */
-    max-width: 100%; /* Define a largura máxima da imagem como 100% do contêiner */
-    height: auto; /* Ajusta automaticamente a altura da imagem para manter a proporção */
-}
 
 /* Define a cor do texto em destaque para títulos */
 .destaque-titulo {
@@ -52,7 +43,7 @@ body {
     width: 615px; /* Define a largura do conteúdo */
     display: flex; /* Aplica o layout flexível ao conteúdo */
     flex-direction: column; /* Organiza os elementos em uma coluna */
-    gap: 30px; /* Define um espaçamento de 30px entre os elementos filhos */
+    gap: 100px; /* Define um espaçamento de 30px entre os elementos filhos */
 }
 
 /* Define o estilo do título principal */
@@ -77,14 +68,18 @@ body {
 /* Define o estilo dos links */
 .apresentacao__links__link {
     background-color: #22D4FD; /* Define a cor de fundo dos links */
-    width: 280px; /* Define a largura dos links */
-    text-align: center; /* Centraliza o texto dentro dos links */
-    border-radius: 16px; /* Arredonda os cantos dos links */
-    font-size: 24px; /* Define o tamanho da fonte dos links */
+    width: 120px; /* Define a largura dos links */
+    height: 120px; /* Define a altura dos links para torná-los quadrados */
+    display: flex; /* Usado para centralizar o texto verticalmente */
+    align-items: center; /* Alinha o conteúdo verticalmente no centro */
+    justify-content: center; /* Centraliza o conteúdo horizontalmente */
+    border-radius: 50%; /* Define os cantos como completamente arredondados */
+    border-style: solid;
+    box-shadow: 0px 0px 15px 4px rgba(12, 116, 212, 0.79);
+    font-size: 21px; /* Define o tamanho da fonte dos links */
     font-weight: 600; /* Define o peso da fonte como semi-negrito */
-    padding: 10.5px 0; /* Adiciona preenchimento vertical dentro dos links */
-    text-decoration: none; /* Remove a sublinhado dos links */
-    color: #000000; /* Define a cor do texto dos links como preto */
+    text-decoration: none; /* Remove o sublinhado dos links */
+    color: #ffffff; /* Define a cor do texto dos links como preto */
     font-family: 'Montserrat', sans-serif; /* Define a fonte dos links */
     margin-top: 50px; /* Adiciona uma margem superior de 50px */
 }
@@ -92,15 +87,15 @@ body {
 /* Define o estilo dos links quando o mouse passa sobre eles */
 .apresentacao__links__link:hover {
     background-color: #ffffff; /* Altera a cor de fundo dos links para branco */
-    color: #000000; /* Altera a cor do texto dos links para preto */
+    color: #22D4FD; /* Altera a cor do texto dos links para preto */
 }
 
 /* Estilos para dispositivos móveis */
 @media (max-width: 768px) {
     
     body {
-        background-image: none; /* Remove a imagem de fundo em dispositivos móveis */
-        background-color: #000000; /* Define o fundo como preto */
+        background-image: url(background-mobile.png); /* Remove a imagem de fundo em dispositivos móveis */
+        
     }
 
     .apresentacao {
@@ -123,19 +118,27 @@ body {
     }
 
     .apresentacao__links {
-        flex-direction: column; /* Empilha os links verticalmente */
+        
         align-items: center; /* Centraliza os links horizontalmente */
     }
 
     .apresentacao__links__link {
-        width: 100%; /* Usa toda a largura disponível no contêiner */
-        margin-top: 20px; /* Reduz a margem superior para 20px */
+        background-color: #22D4FD; /* Define a cor de fundo dos links */
+        width: 100px; /* Define a largura dos links */
+        height: 100px; /* Define a altura dos links para torná-los quadrados */
+        display: flex; /* Usado para centralizar o texto verticalmente */
+        align-items: center; /* Alinha o conteúdo verticalmente no centro */
+        justify-content: center; /* Centraliza o conteúdo horizontalmente */
+        border-radius: 50%; /* Define os cantos como completamente arredondados */
+        border-style: solid;
+        box-shadow: 0px 0px 15px 4px rgba(12, 116, 212, 0.79);
+        font-size: 18px; /* Define o tamanho da fonte dos links */
+        font-weight: 600; /* Define o peso da fonte como semi-negrito */
+        text-decoration: none; /* Remove o sublinhado dos links */
+        color: #ffffff; /* Define a cor do texto dos links como preto */
+        font-family: 'Montserrat', sans-serif; /* Define a fonte dos links */
+        margin-top: 50px; /* Adiciona uma margem superior de 50px */
     }
 
-    .minha-imagem {
-        top: 500px; /* Ajusta a posição da imagem em relação ao topo */
-        left: 50%; /* Centraliza a imagem horizontalmente */
-        transform: translateX(-50%); /* Ajusta a posição da imagem para centralizá-la */
-        max-width: 80%; /* Reduz a largura máxima da imagem para 80% do contêiner */
-    }
+
 }
