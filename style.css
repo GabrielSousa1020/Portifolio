@@ -1,142 +1,223 @@
-@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:ital,wght@0,600;1,600&display=swap');
+html {
+    scroll-behavior: smooth; /* Habilita rolagem suave */
+}
 
-/* Reseta as margens e preenchimentos para todos os elementos */
-* {
-    margin: 0;  
+
+/* Adicione isso ao início do seu arquivo CSS */
+body, html {
+    margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
-/* Define estilos gerais para o corpo da página */
-body {
-    height: 100vh; /* Define a altura do body como 100% da altura da janela */
-    box-sizing: border-box; /* Inclui bordas e padding no cálculo da largura e altura */
-    background-image: url(background.png); /* Define a imagem de fundo */
-    background-size: cover; /* A imagem de fundo cobre toda a área disponível */
-    background-position: center; /* Centraliza a imagem de fundo */
-    overflow: hidden; /* Remove barras de rolagem */
-    color: #F6F6F6; /* Define a cor do texto */
+/* Opcional: aplique o box-sizing a todos os elementos */
+* {
+    box-sizing: border-box;
 }
 
 
-/* Define a cor do texto em destaque para títulos */
-.destaque-titulo {
-    color: #22D4FD; /* Define a cor do texto como um azul claro */
+/* Para a primeira seção, com o background fixo */
+#inicio {
+    background: url('background.png') no-repeat center center;
+    background-size: cover;
+    height: 100vh; /* Mantém a altura ocupando a tela toda */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white; /* Exemplo para o texto */
 }
 
-/* Define a cor do texto em destaque para parágrafos */
-.destaque-paragrafo {
-    color: #22D4FD; /* Define a cor do texto como um azul claro */
+/* Para as outras seções, que terão outro background */
+#habilidades,/*#tecnologias*/#sobre, #contatos {
+    min-height: 100vh;
+    padding: 20px;
+    color: white;
+    text-align: center;
+    background-image: url('background_paginas.png');
 }
 
-/* Define a apresentação da seção com margens e layout flexível */
-.apresentacao {
-    margin: 2%; /* Define a margem ao redor da seção */
-    display: flex; /* Aplica o layout flexível à seção */
-    flex-direction: column; /* Organiza os elementos em uma coluna */
-    align-items: flex-start; /* Alinha os itens ao início da linha principal */
-    justify-content: center; /* Centraliza os itens ao longo do eixo secundário */
-    height: calc(90vh - 60px); /* Calcula a altura como 90% da altura da janela menos 60px */
+/* Estilo do cabeçalho */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    display: flex;
+    justify-content: flex-end;
+    padding: 30px 20px;
+  }
+  
+  /* Lista de navegação */
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    position: fixed;
+    top: 0px;
+    right: 40px; /* Diminuído para trazer os botões mais para a esquerda */
+    font-family: 'Raleway', sans-serif;
 }
-    
-/* Define a apresentação do conteúdo interno com layout flexível e espaçamento entre elementos */
-.apresentacao__conteudo {
-    width: 615px; /* Define a largura do conteúdo */
-    display: flex; /* Aplica o layout flexível ao conteúdo */
-    flex-direction: column; /* Organiza os elementos em uma coluna */
-    gap: 90px; /* Define um espaçamento de 30px entre os elementos filhos */
+  
+  nav ul li {
+    margin-left: 20px;
+  }
+  
+  nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-weight: 600; /* Deixa o texto levemente mais espesso */
+    font-family: 'Raleway', sans-serif; /* Fonte Raleway aplicada */
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background 0.3s, color 0.3s;
+  }
+  
+  /* Efeito ao passar o mouse */
+  nav ul li a:hover {
+    background: #00ffcc;
+    color: black;
+  }
+  
+  /* Destaque do botão ativo */
+nav ul li a.active {
+    background: #00ffcc;
+    color: black;
+}
+  
+
+  /* Ajusta o layout da seção */
+#habilidades {
+    padding: 40px;
+    background-color: #f4f4f4;
+    text-align: center;
 }
 
-/* Define o estilo do título principal */
-.apresentacao__conteudo__titulo {
-    font-size: 30px; /* Define o tamanho da fonte para o título */
-    font-family: 'Krona One', sans-serif; /* Define a fonte do título */
+.container-habilidades {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px; /* Espaçamento entre as colunas */
 }
 
-/* Define o estilo do texto do título */
-.apresentacao__conteudo__titulo__texto {
-    font-size: 22px; /* Define o tamanho da fonte para o texto do título */
-    font-family: 'Montserrat', sans-serif; /* Define a fonte para o texto */
-    margin-top: 10px; /* Adiciona uma margem superior de 10px */
+/* Cada habilidade */
+.habilidade {
+    width: 45%;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+/* Tecnologias (ícones)
+.tecnologias {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 15px;
 }
 
-/* Define o layout dos links, distribuindo-os de forma uniforme */
-.apresentacao__links {
-    display: flex; /* Aplica o layout flexível aos links */
-    justify-content: space-between; /* Distribui os links com espaço uniforme entre eles */
+.tecnologias img {
+    width: 40px; /* Tamanho dos ícones 
+    height: 40px;
+} */
+
+.habilidade:hover {
+    transform: translateY(-20px); /* Efeito de levantar ao passar o mouse */
 }
 
-/* Define o estilo dos links */
-.apresentacao__links__link {
-    background-color: #22D4FD; /* Define a cor de fundo dos links */
-    width: 120px; /* Define a largura dos links */
-    height: 120px; /* Define a altura dos links para torná-los quadrados */
-    display: flex; /* Usado para centralizar o texto verticalmente */
-    align-items: center; /* Alinha o conteúdo verticalmente no centro */
-    justify-content: center; /* Centraliza o conteúdo horizontalmente */
-    border-radius: 50%; /* Define os cantos como completamente arredondados */
-    border-style: solid; /* Define o estilo da borda como sólido */
-    box-shadow: 0px 0px 15px 4px rgba(12, 116, 212, 0.79); /* Adiciona uma sombra ao redor do elemento */
-    font-size: 21px; /* Define o tamanho da fonte dos links */
-    font-weight: 600; /* Define o peso da fonte como semi-negrito */
-    text-decoration: none; /* Remove o sublinhado dos links */
-    color: #ffffff; /* Define a cor do texto dos links como preto */
-    font-family: 'Montserrat', sans-serif; /* Define a fonte dos links */
-    margin-top: 50px; /* Adiciona uma margem superior de 50px */
+h2 {
+    margin-top: 0;
+    font-size: 1.5em;
+    color: #eeeeee;
 }
 
-/* Define o estilo dos links quando o mouse passa sobre eles */
-.apresentacao__links__link:hover {
-    background-color: #ffffff; /* Altera a cor de fundo dos links para branco */
-    color: #22D4FD; /* Altera a cor do texto dos links para preto */
+/* Estilo do gráfico de habilidades */
+.grafico {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-evenly;
+    gap: 20px;
+    margin-top: 20px;
+    height: 300px; /* Altura maior para maior visualização */
+    position: relative;
 }
 
-/* Estilos para dispositivos móveis */
-@media (max-width: 768px) {
-    
-    body {
-        background-image: url(background-mobile.png); /* Remove a imagem de fundo em dispositivos móveis */
-        
+/* Barra de habilidade */
+.coluna {
+    width: 60px; /* Largura aumentada para barras mais visíveis */
+    background: linear-gradient(135deg, #6a11cb, #2575fc); /* Gradiente moderno */
+    border-radius: 10px 10px 0 0;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Sombra para dar profundidade */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(250, 250, 250);
+    font-weight: bold;
+    font-size: 1.2em;
+    transition: all 0.3s ease-in-out; /* Transição suave para animações */
+    overflow: hidden;
+}
+
+/* Barra do gráfico quando o mouse passa sobre ela */
+.grafico .coluna:hover {
+    transform: translateY(-10px); /* Levanta a barra quando o mouse passa por cima */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15); /* Sombra mais forte no hover */
+}
+
+/* Exibir o valor do gráfico (exemplo: 80%) no topo da barra */
+.coluna span {
+    position: absolute;
+    top: -30px;
+    font-size: 1.4em;
+    font-weight: 600;
+    opacity: 0; /* Inicialmente invisível */
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Exibir o valor ao passar o mouse sobre a barra */
+.grafico .coluna:hover span {
+    opacity: 1;
+    transform: translateY(0); /* Aparece de forma suave */
+}
+
+/* Animação para o preenchimento das barras */
+@keyframes preencherBarra {
+    0% {
+        height: 0;
     }
-
-    .apresentacao {
-        margin: 4%; /* Aumenta a margem ao redor da seção */
-        height: auto; /* Define a altura automaticamente para o conteúdo */
-        justify-content: flex-start; /* Alinha o conteúdo ao topo da seção */
-    }
-
-    .apresentacao__conteudo {
-        width: 100%; /* Usa toda a largura disponível no contêiner */
-        gap: 20px; /* Reduz o espaçamento entre os elementos filhos para 20px */
-    }
-
-    .apresentacao__conteudo__titulo {
-        font-size: 24px; /* Reduz o tamanho da fonte para o título */
-    }
-
-    .apresentacao__conteudo__titulo__texto {
-        font-size: 18px; /* Reduz o tamanho da fonte para o texto do título */
-    }
-
-    .apresentacao__links {
-        
-        align-items: center; /* Centraliza os links horizontalmente */
-    }
-
-    .apresentacao__links__link {
-        background-color: #22D4FD; /* Define a cor de fundo dos links */
-        width: 100px; /* Define a largura dos links */
-        height: 100px; /* Define a altura dos links para torná-los quadrados */
-        display: flex; /* Usado para centralizar o texto verticalmente */
-        align-items: center; /* Alinha o conteúdo verticalmente no centro */
-        justify-content: center; /* Centraliza o conteúdo horizontalmente */
-        border-radius: 50%; /* Define os cantos como completamente arredondados */
-        border-style: solid;
-        box-shadow: 0px 0px 15px 4px rgba(12, 116, 212, 0.79);
-        font-size: 18px; /* Define o tamanho da fonte dos links */
-        font-weight: 600; /* Define o peso da fonte como semi-negrito */
-        text-decoration: none; /* Remove o sublinhado dos links */
-        color: #ffffff; /* Define a cor do texto dos links como preto */
-        font-family: 'Montserrat', sans-serif; /* Define a fonte dos links */
-        margin-top: 50px; /* Adiciona uma margem superior de 50px */
+    100% {
+        height: 100%;
     }
 }
+
+.grafico .coluna {
+    animation: preencherBarra 2s ease-out forwards; /* Preenchimento animado */
+}
+
+/* Regras gerais para o gráfico */
+.container-habilidades {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px; /* Maior espaçamento entre as colunas */
+}
+
+.habilidade {
+    width: 30%; /* Ajuste o tamanho das colunas */
+    background-color: #000000;
+    padding: 20px;
+    border-radius: 15px; /* Bordas mais arredondadas */
+    box-shadow: 0 10px 40px rgba(218, 1, 243, 0.1); /* Sombra suave */
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.habilidade:hover {
+    transform: translateY(-10px); /* Efeito de elevação */
+}
+
+
+
