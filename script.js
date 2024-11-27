@@ -38,33 +38,56 @@ navLinks.forEach(link => {
     });
 });
 
-// Define o link ativo quando a página carrega
-document.addEventListener('DOMContentLoaded', setActiveLink);
+// Dados das categorias e habilidades
+const categorias = [
+    {
+        titulo: "Front-End",
+        habilidades: [
+            { nome: "HTML", porcentagem: 90 },
+            { nome: "CSS", porcentagem: 85 },
+            { nome: "JavaScript", porcentagem: 75 },
+            { nome: "React", porcentagem: 60 },
+        ],
+    },
+    {
+        titulo: "Back-End",
+        habilidades: [
+            { nome: "C#", porcentagem: 80 },
+            { nome: "Python", porcentagem: 70 },
+            { nome: "SQL Server", porcentagem: 85 },
+        ],
+    },
+    {
+        titulo: "DevOps",
+        habilidades: [
+            { nome: "Ferramentas", porcentagem: 50 },
+    
+        ],
+    },
+    {
+        titulo: "Gestão de Acessos",
+        habilidades: [
+            { nome: "Gestão", porcentagem: 90 },
+    
+        ],
+    },
+];
 
-document.addEventListener("DOMContentLoaded", function () {
-    // Defina as porcentagens para cada habilidade
-    const habilidades = [
-        { elemento: document.querySelector('.coluna:nth-child(1)'), porcentagem: 60 },
-        { elemento: document.querySelector('.coluna:nth-child(2)'), porcentagem: 40 },
-        { elemento: document.querySelector('.coluna:nth-child(3)'), porcentagem: 90 },
-        { elemento: document.querySelector('.coluna:nth-child(4)'), porcentagem: 60 },
-        { elemento: document.querySelector('.coluna:nth-child(5)'), porcentagem: 75 },
-        { elemento: document.querySelector('.coluna:nth-child(6)'), porcentagem: 85 },
-    ];
-
-    // Definir as animações para cada barra
-    habilidades.forEach(habilidade => {
-        const { elemento, porcentagem } = habilidade;
-        // Ajuste da altura da barra com base na porcentagem
-        elemento.style.setProperty('--barra-altura', `${porcentagem}%`);
+function animarBarras() {
+    categorias.forEach((categoria, categoriaIndex) => {
+        const elementosCategoria = document.querySelectorAll('.categoria')[categoriaIndex];
+        const habilidadesElementos = elementosCategoria.querySelectorAll('.habilidade');
         
-        // Exibe a porcentagem no topo da barra
-        const span = elemento.querySelector('span');
-        span.textContent = `${porcentagem}%`;
+        categoria.habilidades.forEach((habilidade, habilidadeIndex) => {
+            const barra = habilidadesElementos[habilidadeIndex].querySelector('.barra');
+            const porcentagemSpan = habilidadesElementos[habilidadeIndex].querySelector('.porcentagem');
 
-        // Adiciona a classe que inicia a animação de preenchimento
-        setTimeout(() => {
-            elemento.classList.add('animar');
-        }, 100);
+            barra.style.width = `${habilidade.porcentagem}%`;
+            porcentagemSpan.textContent = `${habilidade.porcentagem}%`;
+        });
     });
-});
+}
+
+window.addEventListener('DOMContentLoaded', animarBarras);
+;
+
