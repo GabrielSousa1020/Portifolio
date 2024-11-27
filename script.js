@@ -58,19 +58,22 @@ const categorias = [
         ],
     },
     {
+        titulo: "Gestão de Acessos",
+        habilidades: [
+            { nome: "Gestão", porcentagem: 90 },
+            { nome: "LGPD", porcentagem: 50 },
+            { nome: "ISO270001", porcentagem: 50 }
+    
+        ],
+    },
+    {
         titulo: "DevOps",
         habilidades: [
             { nome: "Ferramentas", porcentagem: 50 },
     
         ],
     },
-    {
-        titulo: "Gestão de Acessos",
-        habilidades: [
-            { nome: "Gestão", porcentagem: 90 },
     
-        ],
-    },
 ];
 
 function animarBarras() {
