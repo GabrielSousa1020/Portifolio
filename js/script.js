@@ -203,13 +203,13 @@ function animarBarras() {
 }
 
 function trocarImagem(elemento) {
-    const img = elemento.querySelector('img');
+    const img = elemento.querySelector('Img');
     const versoSrc = img.src.replace('-frente', '-verso'); // Substitui "frente" por "verso"
     img.src = versoSrc; // Troca a imagem para verso
   }
   
   function restaurarImagem(elemento) {
-    const img = elemento.querySelector('img');
+    const img = elemento.querySelector('Img');
     const frenteSrc = img.src.replace('-verso', '-frente'); // Substitui "verso" por "frente"
     img.src = frenteSrc; // Restaura a imagem para frente
   }
