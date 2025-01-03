@@ -62,8 +62,8 @@ const categorias = [
             { nome: "Microsoft Access", porcentagem: 50 },
             { nome: "Microsoft OneNote", porcentagem: 40 },
             { nome: "Microsoft Teams", porcentagem: 100 },
-    
-    
+
+
         ],
     },
     {
@@ -89,24 +89,24 @@ const categorias = [
             { nome: "Gestão", porcentagem: 90 },
             { nome: "LGPD", porcentagem: 70 },
             { nome: "ISO270001", porcentagem: 60 },
-    
+
         ],
     },
     {
         titulo: "DevOps",
         habilidades: [
             { nome: "Ferramentas", porcentagem: 40 },
-    
+
         ],
     },
-    
+
 ];
 
 function animarBarras() {
     categorias.forEach((categoria, categoriaIndex) => {
         const elementosCategoria = document.querySelectorAll('.categoria')[categoriaIndex];
         const habilidadesElementos = elementosCategoria.querySelectorAll('.habilidade');
-        
+
         categoria.habilidades.forEach((habilidade, habilidadeIndex) => {
             const barra = habilidadesElementos[habilidadeIndex].querySelector('.barra');
             const porcentagemSpan = habilidadesElementos[habilidadeIndex].querySelector('.porcentagem');
@@ -120,7 +120,7 @@ function animarBarras() {
 window.addEventListener('DOMContentLoaded', animarBarras);
 ;
 
-document.getElementById("telefone").addEventListener("input", function(event) {
+document.getElementById("telefone").addEventListener("input", function (event) {
     // Substitui tudo que não for número por vazio
     event.target.value = event.target.value.replace(/\D/g, '');
 });
@@ -130,7 +130,7 @@ const formContato = document.getElementById('form-contato');
 const sucessoMessage = document.getElementById('sucessoMessage');
 
 // Adiciona o evento de envio no formulário
-formContato.addEventListener('submit', function(event) {
+formContato.addEventListener('submit', function (event) {
     event.preventDefault();  // Impede o envio do formulário para que possamos redirecionar
 
     // Obtém os valores dos campos do formulário
@@ -138,7 +138,7 @@ formContato.addEventListener('submit', function(event) {
     const email = document.getElementById('email').value;
     const telefone = document.getElementById('telefone').value;
     const descricao = document.getElementById('descricao').value;
-    
+
     // Substitua "seunumerowhatsapp" pelo seu número no WhatsApp (com o código do país)
     const whatsappLink = `https://api.whatsapp.com/send?phone=5561994573298?text=Nome:%20${encodeURIComponent(nome)}%0AE-mail:%20${encodeURIComponent(email)}%0ATelefone:%20${encodeURIComponent(telefone)}%0ADescrição:%20${encodeURIComponent(descricao)}`;
 
@@ -149,7 +149,7 @@ formContato.addEventListener('submit', function(event) {
     formContato.reset();
 
     // Opcional: Ocultar a mensagem de sucesso após 3 segundos
-    setTimeout(function() {
+    setTimeout(function () {
         sucessoMessage.style.display = 'none';
     }, 3000);
 
@@ -206,11 +206,11 @@ function trocarImagem(elemento) {
     const img = elemento.querySelector('Img');
     const versoSrc = img.src.replace('-frente', '-verso'); // Substitui "frente" por "verso"
     img.src = versoSrc; // Troca a imagem para verso
-  }
-  
-  function restaurarImagem(elemento) {
+}
+
+function restaurarImagem(elemento) {
     const img = elemento.querySelector('Img');
     const frenteSrc = img.src.replace('-verso', '-frente'); // Substitui "verso" por "frente"
     img.src = frenteSrc; // Restaura a imagem para frente
-  }
-  
+}
+
